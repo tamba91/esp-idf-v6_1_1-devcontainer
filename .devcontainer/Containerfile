@@ -44,7 +44,7 @@ USER ${USERNAME}
 
 WORKDIR /home/${USERNAME}/esp
 
-RUN git clone -b v6.1 --single-branch --recursive https://github.com/espressif/esp-idf.git
+RUN git clone -b v6.1.1 --single-branch --recursive https://github.com/espressif/esp-idf.git
 
 WORKDIR /home/${USERNAME}/esp/esp-idf
 
