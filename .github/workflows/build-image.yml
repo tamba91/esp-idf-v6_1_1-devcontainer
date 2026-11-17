@@ -1,4 +1,4 @@
-name: esp-idf-v6_1-devcontainer
+name: esp-idf-build
 
 on:
   push:
@@ -13,7 +13,7 @@ env:
 
 jobs:
   build-and-push:
-    if: github.repository == 'tamba91/esp-idf-v6_1_1-devcontainer'
+    if: github.repository_owner == 'tamba91' && endsWith(github.repository, '-devcontainer')
     runs-on: ubuntu-latest
     permissions:
       contents: read
