@@ -13,17 +13,16 @@
   "containerEnv": {
     "IDF_PATH": "/home/esp32/esp/esp-idf/",
     "IDF_TOOLS_PATH": "/home/esp32/.espressif",
-    "IDF_PYTHON_ENV_PATH": "/home/esp32/.espressif/python_env/idf6.1.1_py3.13_env"
+    "IDF_PYTHON_ENV_PATH": "/home/esp32/.espressif/python_env/idf6.1_py3.13_env"
   },
   "runArgs": [
     "--name=devcontainer-${localWorkspaceFolderBasename}",
     "--hostname=${localWorkspaceFolderBasename}",
-    "--userns=keep-id:uid=1000,gid=1000",
     "--device=/dev/ttyACM0",
     "--volume=/dev/bus/usb:/dev/bus/usb:rw",
-    "--group-add=keep-groups"
+    "--annotation=run.oci.keep_original_groups=1"
   ],
-  "postCreateCommand": "idf.py reconfigure",
+  "postCreateCommand": "bash -lc 'idf.py reconfigure'",
   "customizations": {
     "vscode": {
       "extensions": [
