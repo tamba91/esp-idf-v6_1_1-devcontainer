@@ -7,7 +7,7 @@
   //   "dockerfile": "Containerfile",
   //   "context": "."
   // },
-  
+  "containerUser": "esp32",
   "remoteUser": "esp32",
   "updateRemoteUserUID": false,
   "containerEnv": {
@@ -22,7 +22,7 @@
     "--volume=/dev/bus/usb:/dev/bus/usb:rw",
     "--annotation=run.oci.keep_original_groups=1"
   ],
-  "postCreateCommand": "bash -lc 'idf.py reconfigure'",
+  "postCreateCommand": "idf.py reconfigure",
   "customizations": {
     "vscode": {
       "extensions": [
