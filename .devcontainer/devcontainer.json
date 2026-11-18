@@ -18,6 +18,7 @@
   "runArgs": [
     "--name=devcontainer-${localWorkspaceFolderBasename}",
     "--hostname=${localWorkspaceFolderBasename}",
+    "--userns=keep-id",
     "--device=/dev/ttyACM0",
     "--volume=/dev/bus/usb:/dev/bus/usb:rw",
     "--annotation=run.oci.keep_original_groups=1"
